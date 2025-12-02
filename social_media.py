@@ -1,3 +1,5 @@
+import numpy as np
+
 class SocialMedia:
     #constructor
     def __init__(self, username: str, followers: int, posts: int):
@@ -15,6 +17,8 @@ class SocialMedia:
         self._username = username
         self._followers = followers
         self._posts = posts
+        self._engagement_ratio = np.array([])
+        
 
     def update_stats(self, new_followers: int, new_posts: int):
         if new_posts < 0:
@@ -29,7 +33,21 @@ class SocialMedia:
         self._followers += new_followers
         self._posts += new_posts
 
+        if self._followers != 0:
 
+            ratio = self._posts / self._followers
+            #this will add the new ratio to the end
+            self._engagement_ratio = np.append(self._engagement_ratio, ratio)
+
+
+
+    def average_engagement_ratio(self):
+
+        if len(self._engagement_ratio) == 0:
+            raise ValueError("No Engagement Ratios Available to Display!")
+        
+        return np.mean(self._engagement_ratio)
+        
     def display(self):
         print(f"Username: {self._username}")
         print(f"Followers: {self._followers}")
