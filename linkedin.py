@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+LinkedIn profile class - derived from SocialMedia.
+Tracks connections, profile views, and professional networking metrics.
+"""
 from social_media import SocialMedia
 
 class LinkedIn(SocialMedia):

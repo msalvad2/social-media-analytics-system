@@ -1,20 +1,24 @@
-
+#Miguel Salvador
+"""
+TikTok profile class - derived from SocialMedia.
+Tracks views, reposts, and viral video detection.
+"""
 from social_media import SocialMedia
 
 class TikTok(SocialMedia):
 
-    def __init__(self, username: str, followers: int, posts: int, total_views: int, total_resposts: int):
+    def __init__(self, username: str, followers: int, posts: int, total_views: int, total_reposts: int):
         #will call the bases constructor and that will handle its own test cases
         super().__init__(username, followers, posts)
         if total_views < 0:
             raise ValueError("Total views cannot be negative!")
         
-        if total_resposts < 0:
+        if total_reposts < 0:
             raise ValueError("Total reposts cannot be negative!")
         
         #then we do the test cases for Tiktoks unique members
         self._total_views = total_views
-        self._total_reposts = total_resposts
+        self._total_reposts = total_reposts
 
         
 

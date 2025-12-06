@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+PyTest test suite for TikTok class.
+Tests TikTok-specific methods and data validation.
+"""
 from tiktok import TikTok
 import pytest
 

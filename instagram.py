@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+Instagram profile class - derived from SocialMedia.
+Tracks reels, stories, and Instagram-specific analytics.
+"""
 from social_media import SocialMedia
 
 class Instagram(SocialMedia):

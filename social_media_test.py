@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+PyTest test suite for SocialMedia base class.
+Tests constructor, update_stats, operators, and engagement tracking.
+"""
 import pytest
 from social_media import SocialMedia
 
@@ -228,6 +233,59 @@ def test_le_other_non_SocialMedia_type_invalid():
     with pytest.raises(TypeError):
         flag = obj1 <= 5
 
+############################################
+
+#testing the less than function
+
+def test_lt_other_return_false():
+    obj1 = SocialMedia("123456789", 3, 2)
+    obj2 = SocialMedia("987654321", 3, 2)
+
+    result = obj2 < obj1
+
+    assert result == False
+    
+def test_lt_other_return_true():
+    obj1 = SocialMedia("123456789", 3, 2)
+    obj2 = SocialMedia("987654321", 3, 2)
+
+    result = obj1 < obj2
+
+    assert result == True
+    
+def test_lt_other_non_social_media_invalid():
+    obj1 = SocialMedia("123456789", 3, 2)
+    
+    with pytest.raises(TypeError):
+        result = obj1 < 5
+
+############################################
+
+#testing the equal to function
+
+def test_eq_other_return_true():
+    obj1 = SocialMedia("123456789", 3, 2)
+    obj2 = SocialMedia("123456789", 3, 2)
+
+    result = obj1 == obj2
+
+    assert result == True
+    
+
+def test_equal_other_return_false():
+    obj1 = SocialMedia("123456789", 3, 2)
+    obj2 = SocialMedia("987654321", 3, 2)
+
+    result = obj1 == obj2
+    
+    assert result == False
+
+
+def test_equal_other_non_socialMedia_invalid():
+    obj1 = SocialMedia("123456789", 3, 2)
+    
+    with pytest.raises(TypeError):
+        result = obj1 == 5
 
 ############################################
 
@@ -250,7 +308,7 @@ def test_average_ratio_multiple_engagement_ratios():
     obj1.update_stats(0,10)
     obj1.update_stats(20, 10)
     result = obj1.average_engagement_ratio()
-    assert result == 1.5
+    assert result == pytest.approx(1.5)
 
 
     

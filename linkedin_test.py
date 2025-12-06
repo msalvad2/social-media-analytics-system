@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+PyTest test suite for LinkedIn class.
+Tests LinkedIn-specific methods and data validation.
+"""
 from linkedin import LinkedIn
 import pytest
 

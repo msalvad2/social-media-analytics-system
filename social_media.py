@@ -1,3 +1,8 @@
+#Miguel Salvador
+"""
+Base class for social media platforms.
+Tracks username, followers, posts, and engagement ratios over time.
+"""
 import numpy as np
 
 class SocialMedia:
@@ -78,6 +83,20 @@ class SocialMedia:
             return True
         else:
             return False
+    
+    def __lt__(self, other: "SocialMedia"):
+
+        if not isinstance(other, SocialMedia):
+            raise TypeError("Must compare two objects")
+        
+        return self._username < other._username
+    
+    def __eq__(self, other:  "SocialMedia"):
+
+        if not isinstance(other, SocialMedia):
+            raise TypeError("Must compare two objects!")
+        
+        return self._username == other._username
     
     
 

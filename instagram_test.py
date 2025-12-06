@@ -1,9 +1,12 @@
+#Miguel Salvador 
+"""
+PyTest test suite for Instagram class.
+Tests Instagram-specific methods and data validation.
+"""
 from instagram import Instagram
 import pytest
 
 #constructor test
-import pytest
-
 def test_instagram_constructor_valid():
     #checks for valid imput
     obj = Instagram("123456789", 10, 5, 3, 2)
